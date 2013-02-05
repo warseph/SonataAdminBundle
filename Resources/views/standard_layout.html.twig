@@ -56,11 +56,11 @@ file that was distributed with this source code.
             {% else %}
                 {% if action is defined %}
                     -
-                    {% for label, uri in admin.breadcrumbs(action) %}
+                    {% for breadcrumb in admin.breadcrumbs(action) %}
                         {% if not loop.first  %}
                             &gt;
                         {% endif %}
-                        {{ label }}
+                        {{ breadcrumb['label'] }}
                     {% endfor %}
                 {% endif %}
             {% endif%}
@@ -120,11 +120,11 @@ file that was distributed with this source code.
                 <ul class="breadcrumb">
                     {% if _breadcrumb is empty %}
                         {% if action is defined %}
-                            {% for label, uri in admin.breadcrumbs(action) %}
+                            {% for breadcrumb in admin.breadcrumbs(action) %}
                                 {% if not loop.last  %}
-                                    <li><a href="{{ uri }}">{{ label }}</a><span class="divider">/</span></li>
+                                    <li><a href="{{ breadcrumb['uri'] }}">{{ breadcrumb['label'] }}</a><span class="divider">/</span></li>
                                 {% else %}
-                                    <li class="active">{{ label }}</li>
+                                    <li class="active">{{ breadcrumb['label'] }}</li>
                                 {% endif %}
                             {% endfor %}
                         {% endif %}
@@ -155,9 +155,9 @@ file that was distributed with this source code.
                         {% if _title is not empty %}
                             {{ _title|raw }}
                         {% elseif action is defined %}
-                            {% for label, uri in admin.breadcrumbs(action) %}
+                            {% for breadcrumb in admin.breadcrumbs(action) %}
                                 {% if loop.last  %}
-                                    {{ label }}
+                                    {{ breadcrumb['label'] }}
                                 {% endif %}
                             {% endfor %}
                         {% endif%}

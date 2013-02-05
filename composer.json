@@ -1,10 +1,13 @@
 {
-    "name": "sonata-project/admin-bundle",
+    "name": "warseph/admin-bundle",
     "type": "symfony-bundle",
     "description": "Symfony SonataAdminBundle",
     "keywords": ["Admin Generator", "admin", "sonata", "bootstrap"],
     "homepage": "http://sonata-project.org/bundles/admin",
     "license": "MIT",
+    "replace": {
+        "sonata-project/admin-bundle": "dev-master"
+    },
     "authors": [
         {
             "name": "Thomas Rabaix",
@@ -26,7 +29,7 @@
         "symfony/console": ">=2.1,<2.3-dev",
         "symfony/twig-bridge": ">=2.1,<2.3-dev",
         "twig/twig": ">=1.10,<2.0-dev",
-        "knplabs/knp-menu-bundle": ">=1.1.0,<2.0.x-dev",
+        "knplabs/knp-menu-bundle": "dev-master",
         "sonata-project/jquery-bundle": "dev-master",
         "sonata-project/exporter": "dev-master",
         "sonata-project/block-bundle": "dev-master"
